@@ -16,7 +16,7 @@ public class Main {
 
     var max = Integer.parseInt(args[0]);
     var min = 1;
-    var researchedNumber = Math.random() * (max - min);
+    var researchedNumber = (int) (Math.random() * (max - min));
     var scanner = new Scanner(System.in);
 
     System.out.println("Give me a number between " + min + " and " + max + " : ");

@@ -4,8 +4,15 @@ import java.util.Scanner;
 
 public class Main {
 
+  private enum Parameter {
+    TERMINAL, GRAPHICAL, WEB
+  }
+
   private static void usage() {
-    System.out.println("USAGE : java -jar LessOrPlus.jar maxNumber");
+    System.out.println("""
+            USAGE : java -jar LessOrPlus.jar parameter
+            -terminal to play in a terminal
+            -graphical to play in a window""");
   }
 
   public static void main(String[] args) {
@@ -14,10 +21,17 @@ public class Main {
       return;
     }
 
-    var max = Integer.parseInt(args[0]);
+    var param = args[0].substring(1).toUpperCase();
+    switch (param) {
+      case Parameter.TERMINAL :
+    }
+    var scanner = new Scanner(System.in);
+
+    System.out.println("Give me the max number to find : ");
+
+    var max = scanner.nextInt();
     var min = 1;
     var researchedNumber = (int) (Math.random() * (max - min));
-    var scanner = new Scanner(System.in);
 
     System.out.println("Give me a number between " + min + " and " + max + " : ");
     var givenNumber = scanner.nextInt();
